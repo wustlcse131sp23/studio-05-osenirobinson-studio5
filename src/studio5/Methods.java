@@ -1,5 +1,7 @@
 package studio5;
 
+import java.awt.Color;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
@@ -14,7 +16,9 @@ public class Methods {
 	 * @return the Euclidean distance between (x1,y1) and (x2,y2)
 	 */
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
-		double distance = 0;
+		double distancey = y2 - y1;
+		double distancex = x2 - x1;
+		double distance = Math.sqrt((distancey * distancey) + (distancex * distancex));
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
 		return distance;
@@ -31,21 +35,22 @@ public class Methods {
 		StdDraw.setPenColor(StdDraw.BLACK);
 		StdDraw.filledCircle(x, y, radius);
 
+		StdDraw.setPenColor(new Color (0, 109, 219));
+		StdDraw.filledCircle(x, y, radius*0.75);
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
 
-		
-
+		StdDraw.setPenColor(new Color (146, 0, 0));
+		StdDraw.filledCircle(x, y, radius*0.5);
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
 
-		
-
+		StdDraw.setPenColor(new Color (255, 255, 109));
+		StdDraw.filledCircle(x, y, radius*0.25);
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
 
-		
 	}
 
 	/**
@@ -61,9 +66,13 @@ public class Methods {
 	 */
 	public static String substituteAll(String source, char target, String replacement) {
 		String result = "";
+		
+		char[] characters = source.toCharArray();
+		for (characters = 
 		// TODO: Finish this method
 		
 		return result;
+		
 	}
 
 	/**
